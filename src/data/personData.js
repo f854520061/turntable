@@ -48,7 +48,7 @@ export default {
         sex: 2
     },
     13: {
-        name: '梨秋韵',
+        name: '黎秋韵',
         sex: 2
     }
 }

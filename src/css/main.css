@@ -1,6 +1,7 @@
 body {
     background: url("../../public/backimg.png") repeat;
     padding: 20px;
+    height: 100vh;
 }
 
 #root {

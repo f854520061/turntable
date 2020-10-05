@@ -1,6 +1,12 @@
 import './css/main.css';
 import Vue from 'vue/dist/vue.esm';
 import personData from './data/personData';
+ 
+function stopScrolling(event) {
+    event.preventDefault();
+}
+// 阻止苹果自动滑动事件
+document.addEventListener('touchmove',stopScrolling,false);
 
 const app = new Vue({
     el: '#root',
