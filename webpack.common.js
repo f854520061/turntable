@@ -35,9 +35,6 @@ module.exports = {
                 test: /\.(png|gif|jpg|jpeg)$/,
                 use: {
                     loader: 'url-loader',
-                    options: {
-                        limit: 10 * 1024
-                    }
                 }
             },
             {
@@ -45,6 +42,14 @@ module.exports = {
             }
         ]
     },
+    node: {
+        fs: "empty"
+    },
+    externals: [
+        {
+            xmlttprequest: '{XMLHttpRequest:XMLHttpRequest}'
+        }
+    ],
     plugins: [
         new HtmlWebpackPlugin({
             title: "Lucky Turntable",

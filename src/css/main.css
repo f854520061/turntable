@@ -122,3 +122,21 @@ body {
     font-size: 26px;
     color: #C30F7D;
 }
+.active_1 {
+    color: aqua;
+}
+
+.data_show ul {
+    color: #FFF;
+    list-style: none;
+    padding: 0;
+}
+
+.data_show ul li {
+    margin-bottom: 5px;
+}
+
+.li_head {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
