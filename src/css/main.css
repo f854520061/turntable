@@ -2,6 +2,7 @@ body {
     background: url("../../public/backimg.png") repeat;
     padding: 20px;
     height: 100vh;
+    overflow: auto;
 }
 
 #root {
@@ -121,10 +122,10 @@ body {
     text-align: center;
     line-height: 60px;
     font-size: 26px;
-    color: #C30F7D;
+    color: #c30f13;
 }
 .active_1 {
-    color: aqua;
+    color: rgb(251,229,110);
 }
 
 .data_show ul {

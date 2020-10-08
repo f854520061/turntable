@@ -6,7 +6,7 @@ function stopScrolling(event) {
     event.preventDefault();
 }
 // 阻止苹果自动滑动事件
-document.addEventListener('touchmove',stopScrolling,false);
+document.addEventListener('touchmove',stopScrolling,{passive: false});
 
 const app = new Vue({
     el: '#root',
@@ -71,7 +71,7 @@ const app = new Vue({
     },
     methods: {
         startGame: function () {
-            if (timer || finish) return;
+            if (timer) return;
             clear(this.turnableArr);
             let pArr = Object.keys(personData),
                 idx = 1;
@@ -155,5 +155,6 @@ function startAnimation (data) {
     }, 100)
 }
 function endAnimation () {
+    // 消除计时器
     clearInterval(timer);
 }
