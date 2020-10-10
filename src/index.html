@@ -12,7 +12,7 @@
             <div class="back_r"></div>
             <span class="c_title">卫生大抽奖</span>
             <div class="content">
-                <span v-for="(v, k) in turnableArr" :class="'box box_' + k + ' active_' + v.active">
+                <span v-for="(v, k) in turnableArr" :class="'box box_' + k + ' active_' + (v.active ? k : '')">
                     {{v.label}}
                 </span>
             </div>
