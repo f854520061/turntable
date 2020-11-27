@@ -44,11 +44,15 @@ export default {
         sex: 2
     },
     12: {
-        name: '李荣',
+        name: '陈思锐',
         sex: 2
     },
     13: {
         name: '黎秋韵',
         sex: 2
+    },
+    14: {
+        name: '杨斌',
+        sex: 1
     }
 }
