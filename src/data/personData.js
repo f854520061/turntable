@@ -8,7 +8,7 @@ export default {
         sex: 1
     },
     3: {
-        name: '徐浩洋',
+        name: '杨启发',
         sex: 1
     },
     4: {
@@ -32,7 +32,7 @@ export default {
         sex: 1
     },
     9: {
-        name: '杨启发',
+        name: '徐浩洋',
         sex: 1
     },
     10: {
@@ -54,5 +54,21 @@ export default {
     14: {
         name: '杨斌',
         sex: 1
+    },
+    15: {
+        name: '袁和启',
+        sex: 1
+    },
+    16: {
+        name: '谢誉萍',
+        sex:2
+    },
+    17: {
+        name: '郑凯镔',
+        sex:1, 
+    },
+    18: {
+        name: '陶佩佩',
+        sex:2,  
     }
 }

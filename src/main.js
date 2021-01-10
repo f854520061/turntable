@@ -21,7 +21,7 @@ const app = new Vue({
             },
             2: {
                 active: 0,
-                label: '三排',
+                label: '休闲区',
                 person: 1,
                 personList: []
             },
@@ -29,24 +29,25 @@ const app = new Vue({
                 active: 0,
                 label: '浇花',
                 person: 1,
-                personList: []
+                personList: [],
+                user: 10
             },
             4: {
                 active: 0,
                 label: '大门前台',
-                person: 1,
+                person: 2,
                 personList: []
             },
             5: {
                 active: 0,
                 label: '茶水两排',
-                person: 1,
+                person: 2,
                 personList: []
             },
             6: {
                 active: 0,
-                label: '办公室+1',
-                person: 1,
+                label: '三个办公室',
+                person: 3,
                 personList: []
             },
             7: {
@@ -57,13 +58,19 @@ const app = new Vue({
             },
             8: {
                 active: 0,
-                label: '办公室+2',
+                label: '茶水间',
                 person: 1,
                 personList: []
             },
             9: {
                 active: 0,
                 label: '会议室',
+                person: 1,
+                personList: []
+            },
+            10: {
+                active: 0,
+                label: '倒垃圾',
                 person: 1,
                 personList: []
             }
@@ -94,24 +101,27 @@ let finish = false;
 function loopPromise (promise) {
     Promise.resolve(promise).then(res => {
         setTimeout(() => {
-            if (res.idx == 9 && !res.data[res.idx].person) {
+            if (res.idx == (Object.keys(app.turnableArr).length) && !res.data[res.idx].person) {
                 endAnimation();
                 timer = null;
                 finish = true;
             } else {
                 loopPromise(Promise.resolve(checkPerson(res.data, res.persons, res.idx)))
             }
-        },1000)
+        },100)
     })
 }
 
 // 选人分工
 function checkPerson (data, persons, idx) {
     const len = persons.length;
-    const index = random(0, len);
+    let index = random(0, len);
 
-    console.log(data,persons,idx);
+    console.log(data[idx]);
     if (data[idx].person > 0) {
+        if (data[idx].user) {
+            index = persons.findIndex(s => s == data[idx].user);
+        }
         if (data[idx].type && personData[persons[index]].sex === 2) { // 拖地且女生
             return checkPerson(data, persons, idx);
         }
